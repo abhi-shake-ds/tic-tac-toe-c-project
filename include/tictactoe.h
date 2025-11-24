@@ -1,17 +1,19 @@
 #ifndef TICTACTOE_H
 #define TICTACTOE_H
 
-#define SIZE 3
+// global 3x3 board
+extern char a[3][3];
 
-extern char board[SIZE][SIZE];
-extern const char PLAYER;
-extern const char CPU;
+// show the board
+void display();
 
-void init_board(void);
-void drawBoard(void);
-int freeCells(void);
-void playerMove(void);
-void cpuMove(void);
-char check_winner(void);
+// check who has won, returns 'X', 'O' or ' '
+char check();
+
+// set all cells to space
+void initBoard();
+
+// random move by computer, also increases moves count
+void computerRandomMove(char cpu, int *moves);
 
 #endif
