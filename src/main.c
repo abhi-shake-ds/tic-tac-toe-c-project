@@ -57,7 +57,7 @@ int main(void)
         // Player input logic
     input_label:
         printf("Your Turn (%c). Enter row and col (1-3): ", p1);
-        if (scanf("%d %d", &r, &c) != 1)
+        if (scanf("%d %d", &r, &c) != 2) // <-- FIXED HERE
         {
             // bad input – clear buffer and retry
             int ch;
@@ -109,7 +109,7 @@ int main(void)
         p2_label:
             display();
             printf("Player 2 (%c) turn. Enter row and col (1-3): ", cpu);
-            if (scanf("%d %d", &r, &c) != 1)
+            if (scanf("%d %d", &r, &c) != 2) // <-- AND FIXED HERE
             {
                 int ch;
                 while ((ch = getchar()) != '\n' && ch != EOF)
